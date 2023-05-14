@@ -1,0 +1,41 @@
+.App {
+    text-align: center;
+    overflow-y: auto;
+    width: 100%;
+    height: 100%;
+    font-family: Sans-serif, serif;
+}
+
+.app-wrapper {
+    display: flex;
+    flex-direction: column;
+    margin: auto;
+    border: 1px solid black;
+    width: 800px;
+    height: 1000px;
+    overflow: auto;
+}
+
+.header{
+    position: relative;
+    height: 12rem;
+    z-index: 3;
+}
+
+.header-img {
+    object-fit: cover;
+    width: 100%;
+    height: 100%;
+}
+
+.logo-wrapper{
+    display: flex;
+    position: absolute;
+    left: 5px;
+    top: 5px;
+}
+
+.logo{
+    margin: 20px;
+    width: 150px;
+}
