@@ -1,12 +1,10 @@
 import React from "react";
 import './primary-button.css'
 
-interface PrimaryButtonProps{
-
-}
-
-export const PrimaryButton : React.FC<PrimaryButtonProps> = ({}:PrimaryButtonProps)=>{
+export const PrimaryButton : React.FC = ()=>{
     return (
-            <button className="btn">Legg til</button>
+        <div className="primary-btn-wrapper">
+            <button className="primary-btn">Legg til</button>
+        </div>
     )
 }
