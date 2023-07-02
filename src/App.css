@@ -1,3 +1,25 @@
+:root {
+    --main-color: orangered;
+    --text-color: #fff;
+    --background-color: #1e1c1a;
+    --big-font: 5rem;
+    --h2-font: 2.25rem;
+    --p-font: 0.9rem;
+}
+
+*::selection {
+    background: var(--main-color);
+    color: #fff;
+}
+
+
+body {
+    color: var(--text-color);
+    background: var(--background-color);
+    background-size: cover;
+}
+
+
 .App {
     text-align: center;
     overflow-y: auto;
@@ -6,17 +28,7 @@
     font-family: Sans-serif, serif;
 }
 
-.app-wrapper {
-    display: flex;
-    flex-direction: column;
-    margin: auto;
-    border: 1px solid black;
-    width: 800px;
-    height: 1000px;
-    overflow: auto;
-}
-
-.header{
+.header {
     position: relative;
     height: 12rem;
     z-index: 3;
@@ -28,14 +40,24 @@
     height: 100%;
 }
 
-.logo-wrapper{
+.logo-wrapper {
     display: flex;
     position: absolute;
     left: 5px;
     top: 5px;
 }
 
-.logo{
+.logo {
     margin: 20px;
     width: 150px;
 }
+
+h3 {
+    font-size: 1.6rem;
+}
+
+@media only screen and (max-width: 768px) {
+ h3{
+        font-size: 1.1rem;
+    }
+ }
