@@ -1,4 +1,5 @@
 :root {
+<<<<<<< HEAD
   --main-color: orangered;
   --text-color: #fff;
   --background-color: #1e1c1a;
@@ -19,6 +20,29 @@ body {
   background-size: cover;
 }
 
+=======
+    --main-color: orangered;
+    --text-color: #fff;
+    --background-color: #1e1c1a;
+    --big-font: 5rem;
+    --h2-font: 2.25rem;
+    --p-font: 0.9rem;
+}
+
+*::selection {
+    background: var(--main-color);
+    color: #fff;
+}
+
+
+body {
+    color: var(--text-color);
+    background: var(--background-color);
+    background-size: cover;
+}
+
+
+>>>>>>> 5eab785 (fix: Added responsive meny style (#1))
 .App {
   text-align: center;
   overflow-y: auto;
@@ -28,9 +52,15 @@ body {
 }
 
 .header {
+<<<<<<< HEAD
   position: relative;
   height: 12rem;
   z-index: 3;
+=======
+    position: relative;
+    height: 12rem;
+    z-index: 3;
+>>>>>>> 5eab785 (fix: Added responsive meny style (#1))
 }
 
 .header-img {
@@ -40,6 +70,7 @@ body {
 }
 
 .logo-wrapper {
+<<<<<<< HEAD
   display: flex;
   position: absolute;
   left: 5px;
@@ -59,4 +90,25 @@ h3 {
   h3 {
     font-size: 1.1rem;
   }
+=======
+    display: flex;
+    position: absolute;
+    left: 5px;
+    top: 5px;
 }
+
+.logo {
+    margin: 20px;
+    width: 150px;
+>>>>>>> 5eab785 (fix: Added responsive meny style (#1))
+}
+
+h3 {
+    font-size: 1.6rem;
+}
+
+@media only screen and (max-width: 768px) {
+ h3{
+        font-size: 1.1rem;
+    }
+ }
