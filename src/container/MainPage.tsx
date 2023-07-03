@@ -2,11 +2,7 @@ import React from "react";
 import {MenyCard} from "../components/MenyCard";
 import "./main-page.css";
 
-interface MainPageProps {
-
-}
-
-export const MainPage: React.FC<MainPageProps> = ({}: MainPageProps) => {
+export const MainPage: React.FC = () => {
     return (
         <div>
             <div className="products-cart">
