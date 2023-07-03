@@ -14,6 +14,7 @@ import "./main-page.css";
 >>>>>>> 5eab785 (fix: Added responsive meny style (#1))
 
 export const MainPage: React.FC = () => {
+<<<<<<< HEAD
   const { state, dispatch } = useItem();
   const [isOpenCheckoutModal, setIsOpenCheckoutModal] =
     useState<boolean>(false);
@@ -148,6 +149,8 @@ const products: Product[] = [
 }
 
 export const MainPage: React.FC<MainPageProps> = ({}: MainPageProps) => {
+=======
+>>>>>>> eec5f3c (fix: deploy to netlify (#8))
     return (
         <div>
             <div className="products-cart">
