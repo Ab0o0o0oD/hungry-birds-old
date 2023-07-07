@@ -1,11 +1,15 @@
 :root {
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> 3f8d105 (fix: Added prettier)
   --main-color: orangered;
   --text-color: #fff;
   --background-color: #1e1c1a;
   --big-font: 5rem;
   --h2-font: 2.25rem;
   --p-font: 0.9rem;
+<<<<<<< HEAD
   user-select: none;
 }
 
@@ -27,27 +31,32 @@ body {
     --big-font: 5rem;
     --h2-font: 2.25rem;
     --p-font: 0.9rem;
+=======
+>>>>>>> 3f8d105 (fix: Added prettier)
 }
 
 *::selection {
-    background: var(--main-color);
-    color: #fff;
+  background: var(--main-color);
+  color: #fff;
 }
-
 
 body {
-    color: var(--text-color);
-    background: var(--background-color);
-    background-size: cover;
+  color: var(--text-color);
+  background: var(--background-color);
+  background-size: cover;
 }
 
+<<<<<<< HEAD
 
 >>>>>>> 5eab785 (fix: Added responsive meny style (#1))
+=======
+>>>>>>> 3f8d105 (fix: Added prettier)
 .App {
   text-align: center;
   overflow-y: auto;
   width: 100%;
   height: 100%;
+<<<<<<< HEAD
   position: fixed;
 }
 
@@ -61,6 +70,15 @@ body {
     height: 12rem;
     z-index: 3;
 >>>>>>> 5eab785 (fix: Added responsive meny style (#1))
+=======
+  font-family: Sans-serif, serif;
+}
+
+.header {
+  position: relative;
+  height: 12rem;
+  z-index: 3;
+>>>>>>> 3f8d105 (fix: Added prettier)
 }
 
 .header-img {
@@ -71,10 +89,14 @@ body {
 
 .logo-wrapper {
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> 3f8d105 (fix: Added prettier)
   display: flex;
   position: absolute;
   left: 5px;
   top: 5px;
+<<<<<<< HEAD
 }
 
 .logo {
@@ -101,14 +123,21 @@ h3 {
     margin: 20px;
     width: 150px;
 >>>>>>> 5eab785 (fix: Added responsive meny style (#1))
+=======
+}
+
+.logo {
+  margin: 20px;
+  width: 150px;
+>>>>>>> 3f8d105 (fix: Added prettier)
 }
 
 h3 {
-    font-size: 1.6rem;
+  font-size: 1.6rem;
 }
 
 @media only screen and (max-width: 768px) {
- h3{
-        font-size: 1.1rem;
-    }
- }
+  h3 {
+    font-size: 1.1rem;
+  }
+}

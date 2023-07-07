@@ -56,10 +56,16 @@
       "last 1 safari version"
     ]
 <<<<<<< HEAD
+<<<<<<< HEAD
   },
   "devDependencies": {
     "prettier": "3.0.0"
 =======
 >>>>>>> 1fdb52e (fix: delete trash files (#4))
+=======
+  },
+  "devDependencies": {
+    "prettier": "3.0.0"
+>>>>>>> 3f8d105 (fix: Added prettier)
   }
 }

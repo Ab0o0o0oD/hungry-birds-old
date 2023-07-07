@@ -1,4 +1,5 @@
 <<<<<<< HEAD
+<<<<<<< HEAD
 import React from 'react';
 import styles from './primary-button.module.css';
 
@@ -35,3 +36,15 @@ export const PrimaryButton : React.FC = ()=>{
     )
 }
 >>>>>>> 5eab785 (fix: Added responsive meny style (#1))
+=======
+import React from 'react';
+import './primary-button.css';
+
+export const PrimaryButton: React.FC = () => {
+  return (
+    <div className="primary-btn-wrapper">
+      <button className="primary-btn">Legg til</button>
+    </div>
+  );
+};
+>>>>>>> 3f8d105 (fix: Added prettier)

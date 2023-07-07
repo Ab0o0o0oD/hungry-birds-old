@@ -1,4 +1,5 @@
 import React from 'react';
+<<<<<<< HEAD
 import styles from './meny-card.module.css';
 import { PrimaryButton } from './PrimaryButton';
 import { PlusMinusButton } from './PlusMinusButton';
@@ -73,6 +74,40 @@ export const MenyCard: React.FC<MenyCardProps> = ({title, allergier, img, price,
           />
         )}
       </div>
+=======
+import './meny-card.css';
+import { PrimaryButton } from './PrimaryButton';
+
+interface MenyCardProps {
+  title: string;
+  allergier: string;
+  img: string;
+  price: string;
+  content: string;
+}
+
+export const MenyCard: React.FC<MenyCardProps> = ({
+  title,
+  allergier,
+  img,
+  price,
+  content,
+}: MenyCardProps) => {
+  return (
+    <div className="meny-card">
+      <div className="card-img-wrapper">
+        <img className="mcard-img" src={img} alt="shawarma rull img" />
+      </div>
+      <div className="card-info-wrapper">
+        <div className="card-info">
+          <h5>{title}</h5>
+          <p>Innhold: {content}</p>
+          <p>{allergier}</p>
+          <p>{price}</p>
+        </div>
+      </div>
+      <PrimaryButton />
+>>>>>>> 3f8d105 (fix: Added prettier)
     </div>
   );
 };
