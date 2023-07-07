@@ -28,3 +28,15 @@
     transform: scale(1.05) translateY(3px);
     transition: 0.4s;
 }
+
+@media only screen and (max-width: 768px) {
+    .primary-btn:hover {
+        transform: unset;
+        transition: unset;
+    }
+
+    .primary-btn:active {
+        transform: scale(1.05) translateY(3px);
+        transition: 0.4s;
+    }
+}
