@@ -6,8 +6,14 @@
   font-weight: 600;
   cursor: pointer;
   border-radius: 2%;
+<<<<<<< HEAD
   width: 30px;
   height: 35px;
+=======
+  height: 40px;
+  width: 30px;
+  padding-top: 5px;
+>>>>>>> 8bb6725 (feat: Implemented Cart)
   color: white;
   background-color: var(--main-color);
   border: #3d981f;
@@ -20,6 +26,10 @@
 .plus-minus-button {
   display: flex;
   align-items: center;
+<<<<<<< HEAD
+=======
+  border: 1px solid #ccc;
+>>>>>>> 8bb6725 (feat: Implemented Cart)
 }
 
 .quantity {

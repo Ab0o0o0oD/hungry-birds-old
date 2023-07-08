@@ -9,6 +9,7 @@
   border-radius: 12px;
 }
 .title {
+<<<<<<< HEAD
   font-size: 18px;
 }
 
@@ -36,4 +37,7 @@
     width: 100%;
     align-items: center;
   }
+=======
+  font-size: 1.5rem;
+>>>>>>> 8bb6725 (feat: Implemented Cart)
 }

@@ -57,6 +57,7 @@ body {
   width: 100%;
   height: 100%;
 <<<<<<< HEAD
+<<<<<<< HEAD
   position: fixed;
 }
 
@@ -72,6 +73,9 @@ body {
 >>>>>>> 5eab785 (fix: Added responsive meny style (#1))
 =======
   font-family: Sans-serif, serif;
+=======
+  font-family: 'Baloo Bhai 2', cursive;
+>>>>>>> 8bb6725 (feat: Implemented Cart)
 }
 
 .header {
@@ -128,8 +132,12 @@ h3 {
 
 .logo {
   margin: 20px;
+<<<<<<< HEAD
   width: 150px;
 >>>>>>> 3f8d105 (fix: Added prettier)
+=======
+  width: 200px;
+>>>>>>> 8bb6725 (feat: Implemented Cart)
 }
 
 h3 {
