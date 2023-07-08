@@ -6,8 +6,9 @@ interface MenyCardProps {
   title: string;
   allergier: string;
   img: string;
-  price: string;
+  price: number;
   content: string;
+  onClick: (e: any) => void;
 }
 
 export const MenyCard: React.FC<MenyCardProps> = ({
@@ -16,21 +17,22 @@ export const MenyCard: React.FC<MenyCardProps> = ({
   img,
   price,
   content,
+  onClick,
 }: MenyCardProps) => {
   return (
     <div className="meny-card">
       <div className="card-img-wrapper">
-        <img className="mcard-img" src={img} alt="shawarma rull img" />
+        <img className="product-img" src={img} alt="shawarma rull img" />
       </div>
       <div className="card-info-wrapper">
         <div className="card-info">
           <h5>{title}</h5>
           <p>Innhold: {content}</p>
           <p>{allergier}</p>
-          <p>{price}</p>
+          <p>{price} Kr</p>
         </div>
       </div>
-      <PrimaryButton />
+      <PrimaryButton onClick={onClick} />
     </div>
   );
 };
