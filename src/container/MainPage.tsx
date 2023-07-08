@@ -1,14 +1,19 @@
-import React, { useState } from 'react';
+import React from 'react';
 import { MenyCard } from '../components/MenyCard';
 import './main-page.css';
 import { CartItem, Product } from '../types';
 import { CartItemComponent } from '../components/CartItem';
+import { useItem } from '../state/ItemContext';
 
 export const MainPage: React.FC = () => {
-  const [cartItems, setCartItems] = useState<CartItem[]>([]);
+  const { state, dispatch } = useItem();
   const addProduct = (product: Product) => {
-    setCartItems([...cartItems, { product: product, quantity: 1 }]);
+    const isItemAdded = state.cartItems.find(
+      (item) => item.product.id === product.id,
+    );
+    if (!isItemAdded) dispatch({ type: 'add', product: product });
   };
+  console.log(state.cartItems);
   return (
     <div>
       <div className="products-cart">
@@ -26,23 +31,23 @@ export const MainPage: React.FC = () => {
           ))}
         </div>
         <div className="cart">
-          {cartItems.length === 0 && (
+          {state.cartItems.length === 0 && (
             <>
               <img className={'cart-img'} src="./assets/cart.png" alt="cart" />
               <h5>Handelkurven er tom</h5>
             </>
           )}
-          <div>
-            {cartItems.map((cartItem, index) => (
-              <CartItemComponent
-                key={index}
-                title={cartItem.product.title}
-                setItemsCart={setCartItems}
-                itemsCart={cartItems}
-                product={cartItem.product}
-              />
-            ))}
-          </div>
+          {state.cartItems && (
+            <div>
+              {state.cartItems.map((cartItem: CartItem, index: number) => (
+                <CartItemComponent
+                  key={index}
+                  title={cartItem.product.title}
+                  product={cartItem.product}
+                />
+              ))}
+            </div>
+          )}
         </div>
       </div>
     </div>

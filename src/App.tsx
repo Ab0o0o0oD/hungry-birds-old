@@ -1,6 +1,7 @@
 import React from 'react';
 import './App.css';
 import { MainPage } from './container/MainPage';
+import { ItemProvider } from './state/ItemContext';
 
 function App() {
   return (
@@ -16,7 +17,9 @@ function App() {
         </div>
       </header>
       <nav></nav>
-      <MainPage />
+      <ItemProvider>
+        <MainPage />
+      </ItemProvider>
     </div>
   );
 }
