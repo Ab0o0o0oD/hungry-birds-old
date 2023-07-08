@@ -41,6 +41,7 @@ function App() {
       </ItemProvider>
 =======
 import { MainPage } from './container/MainPage';
+import { ItemProvider } from './state/ItemContext';
 
 function App() {
   return (
@@ -56,8 +57,14 @@ function App() {
         </div>
       </header>
       <nav></nav>
+<<<<<<< HEAD
       <MainPage />
 >>>>>>> 3f8d105 (fix: Added prettier)
+=======
+      <ItemProvider>
+        <MainPage />
+      </ItemProvider>
+>>>>>>> 9a9ad78 (feat: Added cart item context provider)
     </div>
   );
 }
