@@ -1,42 +1,46 @@
-.primary-btn-wrapper {
-  grid-area: button;
+.btnWrapper {
   justify-self: start;
   align-self: center;
-  padding-top: 8px;
-  min-width: 108px;
 }
 
 @media only screen and (max-width: 768px) {
-  .primary-btn-wrapper {
+  .btnWrapper {
     justify-self: end;
-    padding: 0 8px;
-    min-width: 108px;
   }
 }
 
-.primary-btn {
+.btn {
   display: inline-block;
   padding: 10px 20px;
-  background: var(--main-color);
-  color: #fff;
-  border: var(--main-color);
   border-radius: 0.5rem;
   font-weight: 600;
 }
 
-.primary-btn:hover {
+.btn:hover {
   transform: scale(1.05) translateY(3px);
   transition: 0.4s;
 }
 
 @media only screen and (max-width: 768px) {
-  .primary-btn:hover {
+  .btn:hover {
     transform: unset;
     transition: unset;
   }
 
-  .primary-btn:active {
+  .btn:active {
     transform: scale(1.05) translateY(3px);
     transition: 0.4s;
   }
+}
+
+.primary {
+  background: var(--main-color);
+  border: var(--main-color);
+  color: #fff;
+}
+
+.secondary {
+  background: #51585e;
+  border: #51585e;
+  color: #fff;
 }

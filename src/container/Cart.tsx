@@ -18,8 +18,8 @@ export const Cart: React.FC<CartItemProps> = ({ cartItems }: CartItemProps) => {
         </div>
       ) : (
         <div className={styles.cartItemsHeader}>
-          <h1>Din bestilling</h1>
-          <h2>VARER:</h2>
+          <h2>Din bestilling</h2>
+          <h3>VARER:</h3>
         </div>
       )}
       <div className={styles.cartItemsWrapper}>
@@ -34,9 +34,11 @@ export const Cart: React.FC<CartItemProps> = ({ cartItems }: CartItemProps) => {
               />
             ),
         )}
-      </div>
-      <div className={styles.toPaymentBtn}>
-        <div>Til betaling</div>
+        {state.cartItems.length > 0 && (
+          <div className={styles.toPaymentBtn}>
+            <div>Til betaling</div>
+          </div>
+        )}
       </div>
     </div>
   );
