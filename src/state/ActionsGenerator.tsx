@@ -52,6 +52,7 @@ export const decrementItem = (
 
   return updatedCartItems.filter((item) => item.quantity > 0);
 };
+<<<<<<< HEAD
 
 export const updateTotalPrice = (cartItems: CartItem[]): number => {
   return cartItems
@@ -62,3 +63,5 @@ export const updateTotalPrice = (cartItems: CartItem[]): number => {
       0,
     );
 };
+=======
+>>>>>>> 2a13422 (fix: Added Actions generator and style fix)

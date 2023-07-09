@@ -1,13 +1,19 @@
 import React, { useReducer } from 'react';
 import { CartItem, Product } from '../types';
 <<<<<<< HEAD
+<<<<<<< HEAD
 import {
   addToCart,
   updateTotalPrice,
+=======
+import {
+  addToCart,
+>>>>>>> 2a13422 (fix: Added Actions generator and style fix)
   decrementItem,
   deleteFromCart,
   incrementItem,
 } from './ActionsGenerator';
+<<<<<<< HEAD
 
 type Action =
   | { type: 'addToCart'; product: Product }
@@ -21,11 +27,14 @@ type State = {
   totalPrice: number;
 };
 =======
+=======
+>>>>>>> 2a13422 (fix: Added Actions generator and style fix)
 
 type Action =
+  | { type: 'addToCart'; product: Product }
+  | { type: 'deleteFromCart'; product: Product }
   | { type: 'increment'; product: Product }
-  | { type: 'decrement'; product: Product }
-  | { type: 'add'; product: Product };
+  | { type: 'decrement'; product: Product };
 type Dispatch = (action: Action) => void;
 type State = { cartItems: CartItem[] };
 >>>>>>> 9a9ad78 (feat: Added cart item context provider)
@@ -53,8 +62,9 @@ export const itemsReducer = (state: State, action: Action) => {
 
 export const itemsReducer = (state: State, action: Action) => {
   switch (action.type) {
-    case 'add': {
+    case 'addToCart': {
       return {
+<<<<<<< HEAD
         cartItems: [
           ...state.cartItems,
           {
@@ -63,10 +73,19 @@ export const itemsReducer = (state: State, action: Action) => {
           },
         ],
 >>>>>>> 9a9ad78 (feat: Added cart item context provider)
+=======
+        cartItems: addToCart(state.cartItems, action.product),
+      };
+    }
+    case 'deleteFromCart': {
+      return {
+        cartItems: deleteFromCart(state.cartItems, action.product),
+>>>>>>> 2a13422 (fix: Added Actions generator and style fix)
       };
     }
     case 'increment': {
       return {
+<<<<<<< HEAD
 <<<<<<< HEAD
         cartItems: incrementItem(state.cartItems, action.product),
         totalPrice: state.totalPrice,
@@ -83,10 +102,14 @@ export const itemsReducer = (state: State, action: Action) => {
             : cartItem,
         ),
 >>>>>>> 9a9ad78 (feat: Added cart item context provider)
+=======
+        cartItems: incrementItem(state.cartItems, action.product),
+>>>>>>> 2a13422 (fix: Added Actions generator and style fix)
       };
     }
     case 'decrement': {
       return {
+<<<<<<< HEAD
 <<<<<<< HEAD
         cartItems: decrementItem(state.cartItems, action.product),
         totalPrice: state.totalPrice,
@@ -109,6 +132,9 @@ export const itemsReducer = (state: State, action: Action) => {
             : cartItem,
         ),
 >>>>>>> 9a9ad78 (feat: Added cart item context provider)
+=======
+        cartItems: decrementItem(state.cartItems, action.product),
+>>>>>>> 2a13422 (fix: Added Actions generator and style fix)
       };
     }
   }
@@ -137,10 +163,14 @@ export const useItem = () => {
   const context = React.useContext(ItemStateContext);
   if (context === undefined) {
 <<<<<<< HEAD
+<<<<<<< HEAD
     throw new Error('useItem must be used within a ItemProvider');
 =======
     throw new Error('useCount must be used within a CountProvider');
 >>>>>>> 9a9ad78 (feat: Added cart item context provider)
+=======
+    throw new Error('useItem must be used within a ItemProvider');
+>>>>>>> 2a13422 (fix: Added Actions generator and style fix)
   }
   return context;
 };

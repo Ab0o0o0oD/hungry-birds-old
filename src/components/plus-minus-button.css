@@ -7,6 +7,7 @@
   cursor: pointer;
   border-radius: 2%;
 <<<<<<< HEAD
+<<<<<<< HEAD
   width: 30px;
   height: 35px;
 =======
@@ -14,6 +15,11 @@
   width: 30px;
   padding-top: 5px;
 >>>>>>> 8bb6725 (feat: Implemented Cart)
+=======
+  width: 30px;
+  padding-top: 5px;
+  height: 40px;
+>>>>>>> 2a13422 (fix: Added Actions generator and style fix)
   color: white;
   background-color: var(--main-color);
   border: #3d981f;
@@ -27,9 +33,12 @@
   display: flex;
   align-items: center;
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
   border: 1px solid #ccc;
 >>>>>>> 8bb6725 (feat: Implemented Cart)
+=======
+>>>>>>> 2a13422 (fix: Added Actions generator and style fix)
 }
 
 .quantity {

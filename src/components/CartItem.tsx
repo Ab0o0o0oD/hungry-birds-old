@@ -60,6 +60,7 @@ export const CartItemComponent: React.FC<CartItemProps> = ({
 }: CartItemProps) => {
   return (
     <div className={styles.cartItemWrapper}>
+<<<<<<< HEAD
       <h1 className={styles.title}>{title}</h1>
       <h2>Addons</h2>
 <<<<<<< HEAD
@@ -72,6 +73,15 @@ export const CartItemComponent: React.FC<CartItemProps> = ({
 =======
       <PlusMinusButton product={product} />
 >>>>>>> 9a9ad78 (feat: Added cart item context provider)
+=======
+      <div className={styles.description}>
+        <h1 className={styles.title}>{title}</h1>
+        <h2 className={styles.addon}>Addons</h2>
+      </div>
+      <div className={styles.buttons}>
+        <PlusMinusButton product={product} />
+      </div>
+>>>>>>> 2a13422 (fix: Added Actions generator and style fix)
     </div>
   );
 };
