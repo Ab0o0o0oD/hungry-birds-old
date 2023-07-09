@@ -1,10 +1,17 @@
 import React, { useReducer } from 'react';
 import { CartItem, Product } from '../types';
+import {
+  addToCart,
+  decrementItem,
+  deleteFromCart,
+  incrementItem,
+} from './ActionsGenerator';
 
 type Action =
+  | { type: 'addToCart'; product: Product }
+  | { type: 'deleteFromCart'; product: Product }
   | { type: 'increment'; product: Product }
-  | { type: 'decrement'; product: Product }
-  | { type: 'add'; product: Product };
+  | { type: 'decrement'; product: Product };
 type Dispatch = (action: Action) => void;
 type State = { cartItems: CartItem[] };
 type ItemProviderProps = { children: React.ReactNode };
@@ -15,45 +22,24 @@ const ItemStateContext = React.createContext<
 
 export const itemsReducer = (state: State, action: Action) => {
   switch (action.type) {
-    case 'add': {
+    case 'addToCart': {
       return {
-        cartItems: [
-          ...state.cartItems,
-          {
-            product: action.product,
-            quantity: 1,
-          },
-        ],
+        cartItems: addToCart(state.cartItems, action.product),
+      };
+    }
+    case 'deleteFromCart': {
+      return {
+        cartItems: deleteFromCart(state.cartItems, action.product),
       };
     }
     case 'increment': {
       return {
-        cartItems: state.cartItems?.map((cartItem: CartItem) =>
-          cartItem.product.id === action.product.id
-            ? {
-                ...cartItem,
-                ...{
-                  product: action.product,
-                  quantity: cartItem.quantity + 1,
-                },
-              }
-            : cartItem,
-        ),
+        cartItems: incrementItem(state.cartItems, action.product),
       };
     }
     case 'decrement': {
       return {
-        cartItems: state.cartItems?.map((cartItem: CartItem) =>
-          cartItem.product.id === action.product.id
-            ? {
-                ...cartItem,
-                ...{
-                  product: action.product,
-                  quantity: cartItem.quantity - 1,
-                },
-              }
-            : cartItem,
-        ),
+        cartItems: decrementItem(state.cartItems, action.product),
       };
     }
   }
@@ -74,7 +60,7 @@ export const ItemProvider = ({ children }: ItemProviderProps) => {
 export const useItem = () => {
   const context = React.useContext(ItemStateContext);
   if (context === undefined) {
-    throw new Error('useCount must be used within a CountProvider');
+    throw new Error('useItem must be used within a ItemProvider');
   }
   return context;
 };

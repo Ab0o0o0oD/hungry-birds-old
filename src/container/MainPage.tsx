@@ -1,9 +1,9 @@
 import React from 'react';
 import { MenyCard } from '../components/MenyCard';
 import './main-page.css';
-import { CartItem, Product } from '../types';
-import { CartItemComponent } from '../components/CartItem';
+import { Product } from '../types';
 import { useItem } from '../state/ItemContext';
+import { Cart } from './Cart';
 
 export const MainPage: React.FC = () => {
   const { state, dispatch } = useItem();
@@ -11,9 +11,8 @@ export const MainPage: React.FC = () => {
     const isItemAdded = state.cartItems.find(
       (item) => item.product.id === product.id,
     );
-    if (!isItemAdded) dispatch({ type: 'add', product: product });
+    if (!isItemAdded) dispatch({ type: 'addToCart', product: product });
   };
-  console.log(state.cartItems);
   return (
     <div>
       <div className="products-cart">
@@ -21,33 +20,13 @@ export const MainPage: React.FC = () => {
           {products.map((product) => (
             <MenyCard
               key={product.id}
-              title={product.title}
-              allergier={product.allergier}
-              img={product.img}
-              price={product.price}
-              content={product.content}
+              product={product}
               onClick={() => addProduct(product)}
             />
           ))}
         </div>
-        <div className="cart">
-          {state.cartItems.length === 0 && (
-            <>
-              <img className={'cart-img'} src="./assets/cart.png" alt="cart" />
-              <h5>Handelkurven er tom</h5>
-            </>
-          )}
-          {state.cartItems && (
-            <div>
-              {state.cartItems.map((cartItem: CartItem, index: number) => (
-                <CartItemComponent
-                  key={index}
-                  title={cartItem.product.title}
-                  product={cartItem.product}
-                />
-              ))}
-            </div>
-          )}
+        <div className="cart-wrapper">
+          {state.cartItems && <Cart cartItems={state.cartItems} />}
         </div>
       </div>
     </div>

@@ -26,16 +26,5 @@
   }
 }
 
-.cart {
-  grid-area: cart;
-  background-color: #343333;
-  display: flex;
-  min-height: calc(100vh - 20rem);
-  flex-direction: column;
-}
-
-.cart-img {
-  margin: 20% auto 5%;
-  display: block;
-  width: 90%;
+.cart-wrapper {
 }

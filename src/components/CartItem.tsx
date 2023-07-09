@@ -14,9 +14,13 @@ export const CartItemComponent: React.FC<CartItemProps> = ({
 }: CartItemProps) => {
   return (
     <div className={styles.cartItemWrapper}>
-      <h1 className={styles.title}>{title}</h1>
-      <h2>Addons</h2>
-      <PlusMinusButton product={product} />
+      <div className={styles.description}>
+        <h1 className={styles.title}>{title}</h1>
+        <h2 className={styles.addon}>Addons</h2>
+      </div>
+      <div className={styles.buttons}>
+        <PlusMinusButton product={product} />
+      </div>
     </div>
   );
 };
