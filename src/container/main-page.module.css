@@ -13,7 +13,10 @@
 
 .menyWrapper {
   display: block;
+<<<<<<< HEAD
   padding-bottom: 80px;
+=======
+>>>>>>> b7360c7 (feat: Use css modules)
 }
 
 @media only screen and (min-width: 1000px) {
@@ -22,6 +25,13 @@
   }
 }
 
+<<<<<<< HEAD
+=======
+.menyItemsWrapper {
+  height: calc(100vh + 1rem);
+}
+
+>>>>>>> b7360c7 (feat: Use css modules)
 .menyItems {
   grid-template-columns: 1fr;
   grid-template-areas: 'products-list';
@@ -51,12 +61,17 @@
 }
 
 .checkoutButtonSm {
+<<<<<<< HEAD
   width: 90%;
   position: fixed;
   bottom: 1em;
   margin: auto;
   left: 40%;
   transform: translate(-40%, 0);
+=======
+  position: sticky;
+  bottom: 0;
+>>>>>>> b7360c7 (feat: Use css modules)
 }
 @media only screen and (min-width: 1000px) {
   .checkoutButtonSm {

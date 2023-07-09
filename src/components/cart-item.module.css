@@ -10,6 +10,7 @@
 }
 .title {
 <<<<<<< HEAD
+<<<<<<< HEAD
   font-size: 18px;
 }
 
@@ -40,10 +41,13 @@
 =======
   font-size: 1.5rem;
 >>>>>>> 8bb6725 (feat: Implemented Cart)
+=======
+  font-size: 18px;
+>>>>>>> b7360c7 (feat: Use css modules)
 }
 
 .addon {
-  font-size: 1rem;
+  font-size: 12px;
 }
 
 .description {
@@ -51,4 +55,19 @@
 }
 
 .buttons {
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-end;
+  width: 100%;
+  align-items: center;
+}
+
+@media only screen and (min-width: 768px) {
+  .buttons {
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    width: 100%;
+    align-items: center;
+  }
 }

@@ -38,18 +38,24 @@ export const PrimaryButton : React.FC = ()=>{
 >>>>>>> 5eab785 (fix: Added responsive meny style (#1))
 =======
 import React from 'react';
-import './primary-button.css';
+import styles from './primary-button.module.css';
+
 interface PrimaryButtonProps {
   text: string;
   onClick: (e: any) => void;
+  color: 'primary' | 'secondary';
 }
 export const PrimaryButton: React.FC<PrimaryButtonProps> = ({
   text,
   onClick,
+  color,
 }) => {
   return (
-    <div className="primary-btn-wrapper">
-      <button className="primary-btn" onClick={(e) => onClick(e)}>
+    <div className={styles.btnWrapper}>
+      <button
+        className={`${styles.btn} ${styles[color]}`}
+        onClick={(e) => onClick(e)}
+      >
         {text}
       </button>
     </div>

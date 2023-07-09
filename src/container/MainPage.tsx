@@ -183,20 +183,16 @@ import React, { useState } from 'react';
 import React from 'react';
 >>>>>>> 9a9ad78 (feat: Added cart item context provider)
 import { MenyCard } from '../components/MenyCard';
-import './main-page.css';
+import styles from './main-page.module.css';
 import { Product } from '../types';
 import { useItem } from '../state/ItemContext';
 import { Cart } from './Cart';
 
 export const MainPage: React.FC = () => {
   const { state, dispatch } = useItem();
-  const addProduct = (product: Product) => {
-    const isItemAdded = state.cartItems.find(
-      (item) => item.product.id === product.id,
-    );
-    if (!isItemAdded) dispatch({ type: 'addToCart', product: product });
-  };
+
   return (
+<<<<<<< HEAD
     <div>
       <div className="products-cart">
         <div className="products-list" style={{ overflowY: 'auto' }}>
@@ -211,8 +207,32 @@ export const MainPage: React.FC = () => {
         </div>
         <div className="cart-wrapper">
           {state.cartItems && <Cart cartItems={state.cartItems} />}
+=======
+    <div className={styles.mainPageContainer}>
+      <div className={styles.menyWrapper}>
+        <div className={styles.menyItemsWrapper}>
+          <div className={styles.menyItems}>
+            {products.map((product) => (
+              <MenyCard
+                key={product.id}
+                product={product}
+                onClick={() =>
+                  dispatch({ type: 'addToCart', product: product })
+                }
+              />
+            ))}
+          </div>
+>>>>>>> b7360c7 (feat: Use css modules)
         </div>
       </div>
+      <div className={styles.cartWrapper}>
+        {state.cartItems && <Cart cartItems={state.cartItems} />}
+      </div>
+      {state.cartItems.length > 0 && (
+        <div className={styles.checkoutButtonSm}>
+          <button>test</button>
+        </div>
+      )}
     </div>
   );
 };

@@ -41,12 +41,17 @@ export const Cart: React.FC<CartItemProps> = ({ cartItems }: CartItemProps) => {
       ) : (
         <div className={styles.cartItemsHeader}>
 <<<<<<< HEAD
+<<<<<<< HEAD
           <h2>Din bestilling</h2>
           <h3>VARER:</h3>
 =======
           <h1>Din bestilling</h1>
           <h2>VARER:</h2>
 >>>>>>> 2a13422 (fix: Added Actions generator and style fix)
+=======
+          <h2>Din bestilling</h2>
+          <h3>VARER:</h3>
+>>>>>>> b7360c7 (feat: Use css modules)
         </div>
       )}
       <div className={styles.cartItemsWrapper}>
@@ -61,6 +66,7 @@ export const Cart: React.FC<CartItemProps> = ({ cartItems }: CartItemProps) => {
               />
             ),
         )}
+<<<<<<< HEAD
 <<<<<<< HEAD
         <div ref={scrollingRef}></div>
       </div>
@@ -77,6 +83,13 @@ export const Cart: React.FC<CartItemProps> = ({ cartItems }: CartItemProps) => {
       </div>
       <div className={styles.toPaymentBtn}>
         <div>Til betaling</div>
+=======
+        {state.cartItems.length > 0 && (
+          <div className={styles.toPaymentBtn}>
+            <div>Til betaling</div>
+          </div>
+        )}
+>>>>>>> b7360c7 (feat: Use css modules)
       </div>
 >>>>>>> 2a13422 (fix: Added Actions generator and style fix)
     </div>

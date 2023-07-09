@@ -1,5 +1,6 @@
 import React from 'react';
 <<<<<<< HEAD
+<<<<<<< HEAD
 import styles from './meny-card.module.css';
 import { PrimaryButton } from './PrimaryButton';
 import { PlusMinusButton } from './PlusMinusButton';
@@ -76,6 +77,9 @@ export const MenyCard: React.FC<MenyCardProps> = ({title, allergier, img, price,
       </div>
 =======
 import './meny-card.css';
+=======
+import styles from './meny-card.module.css';
+>>>>>>> b7360c7 (feat: Use css modules)
 import { PrimaryButton } from './PrimaryButton';
 import { PlusMinusButton } from './PlusMinusButton';
 import { Product } from '../types';
@@ -96,22 +100,23 @@ export const MenyCard: React.FC<MenyCardProps> = ({
   );
 
   return (
-    <div className="meny-card">
-      <div className="card-img-wrapper">
+    <div className={styles.menyCard}>
+      <div className={styles.cardImgWrapper}>
         <img
-          className="product-img"
+          className={styles.productImg}
           src={product.img}
           alt="shawarma rull img"
         />
       </div>
-      <div className="card-info-wrapper">
-        <div className="card-info">
+      <div className={styles.cardInfoWrapper}>
+        <div className={styles.cardInfo}>
           <h5>{product.title}</h5>
           <p>Innhold: {product.content}</p>
           <p>{product.allergier}</p>
           <p>{product.price} Kr</p>
         </div>
       </div>
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
       <PrimaryButton />
@@ -126,6 +131,19 @@ export const MenyCard: React.FC<MenyCardProps> = ({
         <PrimaryButton text={'Legg til'} onClick={onClick} />
       )}
 >>>>>>> 2a13422 (fix: Added Actions generator and style fix)
+=======
+      <div className={styles.buttonsWrapper}>
+        {isProductInCart ? (
+          <PlusMinusButton product={product} />
+        ) : (
+          <PrimaryButton
+            text={'Legg til'}
+            color={'primary'}
+            onClick={onClick}
+          />
+        )}
+      </div>
+>>>>>>> b7360c7 (feat: Use css modules)
     </div>
   );
 };

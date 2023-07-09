@@ -18,8 +18,12 @@
 =======
   width: 30px;
   padding-top: 5px;
+<<<<<<< HEAD
   height: 40px;
 >>>>>>> 2a13422 (fix: Added Actions generator and style fix)
+=======
+  height: 35px;
+>>>>>>> b7360c7 (feat: Use css modules)
   color: white;
   background-color: var(--main-color);
   border: #3d981f;
