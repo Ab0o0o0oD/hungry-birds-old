@@ -1,5 +1,5 @@
 import React from 'react';
-import './meny-card.css';
+import styles from './meny-card.module.css';
 import { PrimaryButton } from './PrimaryButton';
 import { PlusMinusButton } from './PlusMinusButton';
 import { Product } from '../types';
@@ -20,27 +20,33 @@ export const MenyCard: React.FC<MenyCardProps> = ({
   );
 
   return (
-    <div className="meny-card">
-      <div className="card-img-wrapper">
+    <div className={styles.menyCard}>
+      <div className={styles.cardImgWrapper}>
         <img
-          className="product-img"
+          className={styles.productImg}
           src={product.img}
           alt="shawarma rull img"
         />
       </div>
-      <div className="card-info-wrapper">
-        <div className="card-info">
+      <div className={styles.cardInfoWrapper}>
+        <div className={styles.cardInfo}>
           <h5>{product.title}</h5>
           <p>Innhold: {product.content}</p>
           <p>{product.allergier}</p>
           <p>{product.price} Kr</p>
         </div>
       </div>
-      {isProductInCart ? (
-        <PlusMinusButton product={product} />
-      ) : (
-        <PrimaryButton text={'Legg til'} onClick={onClick} />
-      )}
+      <div className={styles.buttonsWrapper}>
+        {isProductInCart ? (
+          <PlusMinusButton product={product} />
+        ) : (
+          <PrimaryButton
+            text={'Legg til'}
+            color={'primary'}
+            onClick={onClick}
+          />
+        )}
+      </div>
     </div>
   );
 };
