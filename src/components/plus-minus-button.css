@@ -6,9 +6,9 @@
   font-weight: 600;
   cursor: pointer;
   border-radius: 2%;
-  height: 40px;
   width: 30px;
   padding-top: 5px;
+  height: 40px;
   color: white;
   background-color: var(--main-color);
   border: #3d981f;
@@ -21,7 +21,6 @@
 .plus-minus-button {
   display: flex;
   align-items: center;
-  border: 1px solid #ccc;
 }
 
 .quantity {

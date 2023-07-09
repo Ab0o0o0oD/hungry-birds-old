@@ -1,13 +1,17 @@
-import React, { useState } from 'react';
+import React from 'react';
 import { MenyCard } from '../components/MenyCard';
 import './main-page.css';
-import { CartItem, Product } from '../types';
-import { CartItemComponent } from '../components/CartItem';
+import { Product } from '../types';
+import { useItem } from '../state/ItemContext';
+import { Cart } from './Cart';
 
 export const MainPage: React.FC = () => {
-  const [cartItems, setCartItems] = useState<CartItem[]>([]);
+  const { state, dispatch } = useItem();
   const addProduct = (product: Product) => {
-    setCartItems([...cartItems, { product: product, quantity: 1 }]);
+    const isItemAdded = state.cartItems.find(
+      (item) => item.product.id === product.id,
+    );
+    if (!isItemAdded) dispatch({ type: 'addToCart', product: product });
   };
   return (
     <div>
@@ -16,33 +20,13 @@ export const MainPage: React.FC = () => {
           {products.map((product) => (
             <MenyCard
               key={product.id}
-              title={product.title}
-              allergier={product.allergier}
-              img={product.img}
-              price={product.price}
-              content={product.content}
+              product={product}
               onClick={() => addProduct(product)}
             />
           ))}
         </div>
-        <div className="cart">
-          {cartItems.length === 0 && (
-            <>
-              <img className={'cart-img'} src="./assets/cart.png" alt="cart" />
-              <h5>Handelkurven er tom</h5>
-            </>
-          )}
-          <div>
-            {cartItems.map((cartItem, index) => (
-              <CartItemComponent
-                key={index}
-                title={cartItem.product.title}
-                setItemsCart={setCartItems}
-                itemsCart={cartItems}
-                product={cartItem.product}
-              />
-            ))}
-          </div>
+        <div className="cart-wrapper">
+          {state.cartItems && <Cart cartItems={state.cartItems} />}
         </div>
       </div>
     </div>
