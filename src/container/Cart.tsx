@@ -1,5 +1,6 @@
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 import React, { useEffect, useRef } from 'react';
 =======
 import React from 'react';
@@ -7,6 +8,9 @@ import React from 'react';
 =======
 import React, { LegacyRef, useEffect, useRef } from 'react';
 >>>>>>> 1ec328b (feat: Scrollable cart items (#12))
+=======
+import React, { useEffect, useRef } from 'react';
+>>>>>>> f0bdd3f (fix: remove unused import)
 import { CartItem } from '../types';
 import { CartItemComponent } from '../components/CartItem';
 import styles from './cart.module.css';
