@@ -45,6 +45,7 @@ export const MainPage: React.FC = () => {
         {state.cartItems && <Cart cartItems={state.cartItems} />}
       </div>
       {state.cartItems.length > 0 && (
+<<<<<<< HEAD
         <div className={styles.checkoutButtonSm}>
           <CheckoutButton
             totalPrice={state.totalPrice}
@@ -232,6 +233,9 @@ export const MainPage: React.FC = () => {
         <div className={styles.checkoutButtonSm}>
           <button>test</button>
         </div>
+=======
+        <div className={styles.checkoutButtonSm}>Til betaling</div>
+>>>>>>> 1ec328b (feat: Scrollable cart items (#12))
       )}
     </div>
   );

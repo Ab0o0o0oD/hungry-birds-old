@@ -13,6 +13,7 @@
 =======
   height: 40px;
   width: 30px;
+<<<<<<< HEAD
   padding-top: 5px;
 >>>>>>> 8bb6725 (feat: Implemented Cart)
 =======
@@ -22,6 +23,8 @@
   height: 40px;
 >>>>>>> 2a13422 (fix: Added Actions generator and style fix)
 =======
+=======
+>>>>>>> 1ec328b (feat: Scrollable cart items (#12))
   height: 35px;
 >>>>>>> b7360c7 (feat: Use css modules)
   color: white;

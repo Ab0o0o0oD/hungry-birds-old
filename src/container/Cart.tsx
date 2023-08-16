@@ -1,8 +1,12 @@
 <<<<<<< HEAD
+<<<<<<< HEAD
 import React, { useEffect, useRef } from 'react';
 =======
 import React from 'react';
 >>>>>>> 2a13422 (fix: Added Actions generator and style fix)
+=======
+import React, { LegacyRef, useEffect, useRef } from 'react';
+>>>>>>> 1ec328b (feat: Scrollable cart items (#12))
 import { CartItem } from '../types';
 import { CartItemComponent } from '../components/CartItem';
 import styles from './cart.module.css';
@@ -18,6 +22,9 @@ interface CartItemProps {
 export const Cart: React.FC<CartItemProps> = ({ cartItems }: CartItemProps) => {
   const { state } = useItem();
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> 1ec328b (feat: Scrollable cart items (#12))
 
   const scrollingRef = useRef<HTMLDivElement>(null);
 
@@ -29,8 +36,11 @@ export const Cart: React.FC<CartItemProps> = ({ cartItems }: CartItemProps) => {
       inline: 'start',
     });
   });
+<<<<<<< HEAD
 =======
 >>>>>>> 2a13422 (fix: Added Actions generator and style fix)
+=======
+>>>>>>> 1ec328b (feat: Scrollable cart items (#12))
   return (
     <div className={styles.cartContainer}>
       {state.cartItems.length === 0 ? (
@@ -68,6 +78,7 @@ export const Cart: React.FC<CartItemProps> = ({ cartItems }: CartItemProps) => {
         )}
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
         <div ref={scrollingRef}></div>
       </div>
       {state.cartItems.length > 0 && (
@@ -92,6 +103,15 @@ export const Cart: React.FC<CartItemProps> = ({ cartItems }: CartItemProps) => {
 >>>>>>> b7360c7 (feat: Use css modules)
       </div>
 >>>>>>> 2a13422 (fix: Added Actions generator and style fix)
+=======
+        <div ref={scrollingRef}></div>
+      </div>
+      {state.cartItems.length > 0 && (
+        <div className={styles.toPaymentBtn}>
+          <div>Til betaling</div>
+        </div>
+      )}
+>>>>>>> 1ec328b (feat: Scrollable cart items (#12))
     </div>
   );
 };

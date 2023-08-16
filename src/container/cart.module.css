@@ -19,8 +19,12 @@
 >>>>>>> 2a13422 (fix: Added Actions generator and style fix)
 =======
   margin: 1rem 0 0 1rem;
+<<<<<<< HEAD
   height: 60%;
 >>>>>>> b7360c7 (feat: Use css modules)
+=======
+  position: relative;
+>>>>>>> 1ec328b (feat: Scrollable cart items (#12))
 }
 
 .cartImg {
@@ -40,14 +44,20 @@
   overflow-y: auto;
   flex: 1 1 auto;
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> 1ec328b (feat: Scrollable cart items (#12))
   height: 500px;
   margin-bottom: 50px;
 }
 .cartItemsWrapper:last-child {
   margin-bottom: 40px;
+<<<<<<< HEAD
 =======
   max-height: 100vh;
 >>>>>>> 2a13422 (fix: Added Actions generator and style fix)
+=======
+>>>>>>> 1ec328b (feat: Scrollable cart items (#12))
 }
 
 /* width */
@@ -80,11 +90,14 @@
   width: 90%;
 =======
 .toPaymentBtn {
-  user-select: none;
   cursor: pointer;
-  position: sticky;
+  position: absolute;
   bottom: 10px;
-  width: 100%;
+  left: 0;
+  right: 0;
+  margin: auto;
+  width: 90%;
+  padding: 8px;
   border-radius: 10px;
   background-color: rgb(255, 131, 92);
   color: white;

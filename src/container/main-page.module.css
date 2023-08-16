@@ -14,9 +14,13 @@
 .menyWrapper {
   display: block;
 <<<<<<< HEAD
+<<<<<<< HEAD
   padding-bottom: 80px;
 =======
 >>>>>>> b7360c7 (feat: Use css modules)
+=======
+  padding-bottom: 80px;
+>>>>>>> 1ec328b (feat: Scrollable cart items (#12))
 }
 
 @media only screen and (min-width: 1000px) {
@@ -26,12 +30,15 @@
 }
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
 .menyItemsWrapper {
   height: calc(100vh + 1rem);
 }
 
 >>>>>>> b7360c7 (feat: Use css modules)
+=======
+>>>>>>> 1ec328b (feat: Scrollable cart items (#12))
 .menyItems {
   grid-template-columns: 1fr;
   grid-template-areas: 'products-list';
@@ -62,6 +69,7 @@
 
 .checkoutButtonSm {
 <<<<<<< HEAD
+<<<<<<< HEAD
   width: 90%;
   position: fixed;
   bottom: 1em;
@@ -72,6 +80,23 @@
   position: sticky;
   bottom: 0;
 >>>>>>> b7360c7 (feat: Use css modules)
+=======
+  cursor: pointer;
+  position: fixed;
+  z-index: 8;
+  bottom: 1em;
+  display: inline-block;
+  left: 0;
+  width: 90%;
+  margin: auto;
+  grid-template-columns: 1fr auto 1fr;
+  border-radius: 0.75em;
+  box-sizing: border-box;
+  background-color: rgb(236, 94, 0);
+  box-shadow: rgba(213, 140, 115, 0.1) 0px 17px 12px -2px;
+  padding: 10px;
+  right: 18px;
+>>>>>>> 1ec328b (feat: Scrollable cart items (#12))
 }
 @media only screen and (min-width: 1000px) {
   .checkoutButtonSm {
