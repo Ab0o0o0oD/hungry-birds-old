@@ -29,9 +29,7 @@ export const MainPage: React.FC = () => {
         {state.cartItems && <Cart cartItems={state.cartItems} />}
       </div>
       {state.cartItems.length > 0 && (
-        <div className={styles.checkoutButtonSm}>
-          <button>test</button>
-        </div>
+        <div className={styles.checkoutButtonSm}>Til betaling</div>
       )}
     </div>
   );

@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { LegacyRef, useEffect, useRef } from 'react';
 import { CartItem } from '../types';
 import { CartItemComponent } from '../components/CartItem';
 import styles from './cart.module.css';
@@ -9,6 +9,17 @@ interface CartItemProps {
 
 export const Cart: React.FC<CartItemProps> = ({ cartItems }: CartItemProps) => {
   const { state } = useItem();
+
+  const scrollingRef = useRef<HTMLDivElement>(null);
+
+  useEffect(() => {
+    // @ts-ignore
+    scrollingRef.current.scrollIntoView({
+      behavior: 'smooth',
+      block: 'nearest',
+      inline: 'start',
+    });
+  });
   return (
     <div className={styles.cartContainer}>
       {state.cartItems.length === 0 ? (
@@ -34,12 +45,13 @@ export const Cart: React.FC<CartItemProps> = ({ cartItems }: CartItemProps) => {
               />
             ),
         )}
-        {state.cartItems.length > 0 && (
-          <div className={styles.toPaymentBtn}>
-            <div>Til betaling</div>
-          </div>
-        )}
+        <div ref={scrollingRef}></div>
       </div>
+      {state.cartItems.length > 0 && (
+        <div className={styles.toPaymentBtn}>
+          <div>Til betaling</div>
+        </div>
+      )}
     </div>
   );
 };
