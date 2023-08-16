@@ -1,4 +1,4 @@
-import React, { LegacyRef, useEffect, useRef } from 'react';
+import React, { useEffect, useRef } from 'react';
 import { CartItem } from '../types';
 import { CartItemComponent } from '../components/CartItem';
 import styles from './cart.module.css';
