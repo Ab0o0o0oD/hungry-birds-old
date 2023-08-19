@@ -52,3 +52,13 @@ export const decrementItem = (
 
   return updatedCartItems.filter((item) => item.quantity > 0);
 };
+
+export const updateTotalPrice = (cartItems: CartItem[]): number => {
+  return cartItems
+    ?.map((item) => item.quantity * item.product.price)
+    .reduce(
+      (previousValue, currentValue, currentIndex) =>
+        previousValue + currentValue,
+      0,
+    );
+};

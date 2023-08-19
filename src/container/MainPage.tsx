@@ -1,12 +1,17 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import { MenyCard } from '../components/MenyCard';
 import styles from './main-page.module.css';
 import { Product } from '../types';
 import { useItem } from '../state/ItemContext';
 import { Cart } from './Cart';
+import { CheckoutButton } from '../components/CheckoutButton';
+import ReactModal from 'react-modal';
 
 export const MainPage: React.FC = () => {
   const { state, dispatch } = useItem();
+  const [isOpenCheckoutModal, setIsOpenCheckoutModal] =
+    useState<boolean>(false);
+  useEffect(() => dispatch({ type: 'updateTotalPrice' }));
 
   return (
     <div className={styles.mainPageContainer}>
@@ -29,8 +34,31 @@ export const MainPage: React.FC = () => {
         {state.cartItems && <Cart cartItems={state.cartItems} />}
       </div>
       {state.cartItems.length > 0 && (
-        <div className={styles.checkoutButtonSm}>Til betaling</div>
+        <div className={styles.checkoutButtonSm}>
+          <CheckoutButton
+            totalPrice={state.totalPrice}
+            cartItemsNumber={state.cartItems.length}
+            onClick={() => setIsOpenCheckoutModal(!isOpenCheckoutModal)}
+          />
+        </div>
       )}
+      <ReactModal
+        isOpen={isOpenCheckoutModal}
+        contentLabel="Checkout modal"
+        style={{ content: { color: 'black' } }}
+      >
+        <div>
+          <button onClick={() => setIsOpenCheckoutModal(!isOpenCheckoutModal)}>
+            Close
+          </button>
+          <h2>Bestilling:</h2>
+          <ol>
+            {state.cartItems.map((item, index) => (
+              <li key={index}>{item.product.title}</li>
+            ))}
+          </ol>
+        </div>
+      </ReactModal>
     </div>
   );
 };
@@ -41,7 +69,7 @@ const products: Product[] = [
     cat: 's',
     title: 'SHAWARMA I RULL',
     content: 'Agurk, chicken',
-    price: 100,
+    price: 120,
     allergier: 'Allergier: gluten',
     img: './assets/shawarmarull.jpg',
   },
@@ -50,7 +78,7 @@ const products: Product[] = [
     cat: 's',
     title: 'SHAWARMA TALLARKEN',
     content: 'Agurk, chicken',
-    price: 100,
+    price: 140,
     allergier: 'Allergier: gluten',
     img: './assets/shawrma-arabi.jpeg',
   },
@@ -59,7 +87,7 @@ const products: Product[] = [
     cat: 's',
     title: 'HUNGRY BIRDS ',
     content: 'Agurk, chicken',
-    price: 100,
+    price: 165,
     allergier: 'Allergier: gluten',
     img: './assets/hungry-birds.png',
   },

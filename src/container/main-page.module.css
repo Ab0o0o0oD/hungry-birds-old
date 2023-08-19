@@ -51,21 +51,12 @@
 }
 
 .checkoutButtonSm {
-  cursor: pointer;
-  position: fixed;
-  z-index: 8;
-  bottom: 1em;
-  display: inline-block;
-  left: 0;
   width: 90%;
+  position: fixed;
+  bottom: 1em;
   margin: auto;
-  grid-template-columns: 1fr auto 1fr;
-  border-radius: 0.75em;
-  box-sizing: border-box;
-  background-color: rgb(236, 94, 0);
-  box-shadow: rgba(213, 140, 115, 0.1) 0px 17px 12px -2px;
-  padding: 10px;
-  right: 18px;
+  left: 40%;
+  transform: translate(-40%, 0);
 }
 @media only screen and (min-width: 1000px) {
   .checkoutButtonSm {
