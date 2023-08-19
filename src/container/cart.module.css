@@ -51,17 +51,11 @@
   background-color: #51585e;
 }
 
-.toPaymentBtn {
-  cursor: pointer;
+.toPaymentBtnLg {
   position: absolute;
   bottom: 10px;
   left: 0;
   right: 0;
   margin: auto;
   width: 90%;
-  padding: 8px;
-  border-radius: 10px;
-  background-color: rgb(255, 131, 92);
-  color: white;
-  text-align: center;
 }
