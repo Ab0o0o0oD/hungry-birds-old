@@ -4,6 +4,9 @@
   "private": true,
   "dependencies": {
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> 6346829 (fix: Added checkout modal (#15))
     "@types/node": "16.18.30",
     "@types/react": "18.2.6",
     "@types/react-dom": "18.2.4",
@@ -14,6 +17,7 @@
     "react-dom": "18.2.0",
     "react-icons": "4.10.1",
     "react-modal": "3.16.1",
+<<<<<<< HEAD
     "react-scripts": "5.0.1",
     "tailwindcss": "3.3.2",
     "typescript": "4.9.5",
@@ -31,6 +35,12 @@
     "web-vitals": "^2.1.4",
     "tailwindcss": "^3.3.2"
 >>>>>>> 5eab785 (fix: Added responsive meny style (#1))
+=======
+    "react-scripts": "5.0.1",
+    "tailwindcss": "3.3.2",
+    "typescript": "4.9.5",
+    "web-vitals": "2.1.4"
+>>>>>>> 6346829 (fix: Added checkout modal (#15))
   },
   "scripts": {
     "serve": "react-scripts start",

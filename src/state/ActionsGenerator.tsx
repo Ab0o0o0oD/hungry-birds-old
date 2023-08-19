@@ -53,6 +53,9 @@ export const decrementItem = (
   return updatedCartItems.filter((item) => item.quantity > 0);
 };
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> 6346829 (fix: Added checkout modal (#15))
 
 export const updateTotalPrice = (cartItems: CartItem[]): number => {
   return cartItems
@@ -63,5 +66,8 @@ export const updateTotalPrice = (cartItems: CartItem[]): number => {
       0,
     );
 };
+<<<<<<< HEAD
 =======
 >>>>>>> 2a13422 (fix: Added Actions generator and style fix)
+=======
+>>>>>>> 6346829 (fix: Added checkout modal (#15))

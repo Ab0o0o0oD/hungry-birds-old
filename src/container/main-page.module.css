@@ -70,6 +70,7 @@
 .checkoutButtonSm {
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
   width: 90%;
   position: fixed;
   bottom: 1em;
@@ -87,8 +88,13 @@
   bottom: 1em;
   display: inline-block;
   left: 0;
+=======
+>>>>>>> 6346829 (fix: Added checkout modal (#15))
   width: 90%;
+  position: fixed;
+  bottom: 1em;
   margin: auto;
+<<<<<<< HEAD
   grid-template-columns: 1fr auto 1fr;
   border-radius: 0.75em;
   box-sizing: border-box;
@@ -97,6 +103,10 @@
   padding: 10px;
   right: 18px;
 >>>>>>> 1ec328b (feat: Scrollable cart items (#12))
+=======
+  left: 40%;
+  transform: translate(-40%, 0);
+>>>>>>> 6346829 (fix: Added checkout modal (#15))
 }
 @media only screen and (min-width: 1000px) {
   .checkoutButtonSm {

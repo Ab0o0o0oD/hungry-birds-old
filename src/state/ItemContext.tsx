@@ -5,10 +5,13 @@ import { CartItem, Product } from '../types';
 import {
   addToCart,
   updateTotalPrice,
+<<<<<<< HEAD
 =======
 import {
   addToCart,
 >>>>>>> 2a13422 (fix: Added Actions generator and style fix)
+=======
+>>>>>>> 6346829 (fix: Added checkout modal (#15))
   decrementItem,
   deleteFromCart,
   incrementItem,
@@ -34,15 +37,26 @@ type Action =
   | { type: 'addToCart'; product: Product }
   | { type: 'deleteFromCart'; product: Product }
   | { type: 'increment'; product: Product }
-  | { type: 'decrement'; product: Product };
+  | { type: 'decrement'; product: Product }
+  | { type: 'updateTotalPrice' };
 type Dispatch = (action: Action) => void;
+<<<<<<< HEAD
 type State = { cartItems: CartItem[] };
 >>>>>>> 9a9ad78 (feat: Added cart item context provider)
+=======
+type State = {
+  cartItems: CartItem[];
+  totalPrice: number;
+};
+>>>>>>> 6346829 (fix: Added checkout modal (#15))
 type ItemProviderProps = { children: React.ReactNode };
 
 const ItemStateContext = React.createContext<
   { state: State; dispatch: Dispatch } | undefined
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> 6346829 (fix: Added checkout modal (#15))
 >({ state: { cartItems: [], totalPrice: 0 }, dispatch: (action) => action });
 
 export const itemsReducer = (state: State, action: Action) => {
@@ -57,6 +71,7 @@ export const itemsReducer = (state: State, action: Action) => {
       return {
         cartItems: deleteFromCart(state.cartItems, action.product),
         totalPrice: state.totalPrice,
+<<<<<<< HEAD
 =======
 >(undefined);
 
@@ -81,6 +96,8 @@ export const itemsReducer = (state: State, action: Action) => {
       return {
         cartItems: deleteFromCart(state.cartItems, action.product),
 >>>>>>> 2a13422 (fix: Added Actions generator and style fix)
+=======
+>>>>>>> 6346829 (fix: Added checkout modal (#15))
       };
     }
     case 'increment': {
@@ -89,6 +106,7 @@ export const itemsReducer = (state: State, action: Action) => {
 <<<<<<< HEAD
         cartItems: incrementItem(state.cartItems, action.product),
         totalPrice: state.totalPrice,
+<<<<<<< HEAD
 =======
         cartItems: state.cartItems?.map((cartItem: CartItem) =>
           cartItem.product.id === action.product.id
@@ -105,6 +123,8 @@ export const itemsReducer = (state: State, action: Action) => {
 =======
         cartItems: incrementItem(state.cartItems, action.product),
 >>>>>>> 2a13422 (fix: Added Actions generator and style fix)
+=======
+>>>>>>> 6346829 (fix: Added checkout modal (#15))
       };
     }
     case 'decrement': {
@@ -119,6 +139,7 @@ export const itemsReducer = (state: State, action: Action) => {
       return {
         cartItems: state.cartItems,
         totalPrice: updateTotalPrice(state.cartItems),
+<<<<<<< HEAD
 =======
         cartItems: state.cartItems?.map((cartItem: CartItem) =>
           cartItem.product.id === action.product.id
@@ -135,6 +156,8 @@ export const itemsReducer = (state: State, action: Action) => {
 =======
         cartItems: decrementItem(state.cartItems, action.product),
 >>>>>>> 2a13422 (fix: Added Actions generator and style fix)
+=======
+>>>>>>> 6346829 (fix: Added checkout modal (#15))
       };
     }
   }
@@ -142,13 +165,19 @@ export const itemsReducer = (state: State, action: Action) => {
 
 export const ItemProvider = ({ children }: ItemProviderProps) => {
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> 6346829 (fix: Added checkout modal (#15))
   const [state, dispatch] = useReducer(itemsReducer, {
     cartItems: [],
     totalPrice: 0,
   });
+<<<<<<< HEAD
 =======
   const [state, dispatch] = useReducer(itemsReducer, { cartItems: [] });
 >>>>>>> 9a9ad78 (feat: Added cart item context provider)
+=======
+>>>>>>> 6346829 (fix: Added checkout modal (#15))
   const value = React.useMemo(() => ({ state, dispatch }), [state, dispatch]);
   // NOTE: you *might* need to memoize this value
   // Learn more in http://kcd.im/optimize-context

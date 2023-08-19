@@ -81,6 +81,7 @@
 }
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 .toPaymentBtnLg {
   position: absolute;
   bottom: 10px;
@@ -91,12 +92,16 @@
 =======
 .toPaymentBtn {
   cursor: pointer;
+=======
+.toPaymentBtnLg {
+>>>>>>> 6346829 (fix: Added checkout modal (#15))
   position: absolute;
   bottom: 10px;
   left: 0;
   right: 0;
   margin: auto;
   width: 90%;
+<<<<<<< HEAD
   padding: 8px;
   border-radius: 10px;
   background-color: rgb(255, 131, 92);
@@ -107,4 +112,6 @@
 >>>>>>> 2a13422 (fix: Added Actions generator and style fix)
 =======
 >>>>>>> b7360c7 (feat: Use css modules)
+=======
+>>>>>>> 6346829 (fix: Added checkout modal (#15))
 }

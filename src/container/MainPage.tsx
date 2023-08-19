@@ -2,6 +2,9 @@
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> 6346829 (fix: Added checkout modal (#15))
 import React, { useEffect, useState } from 'react';
 import { MenyCard } from '../components/MenyCard';
 import styles from './main-page.module.css';
@@ -10,11 +13,14 @@ import { useItem } from '../state/ItemContext';
 import { Cart } from './Cart';
 import { CheckoutButton } from '../components/CheckoutButton';
 import ReactModal from 'react-modal';
+<<<<<<< HEAD
 =======
 import React from "react";
 import {MenyCard} from "../components/MenyCard";
 import "./main-page.css";
 >>>>>>> 5eab785 (fix: Added responsive meny style (#1))
+=======
+>>>>>>> 6346829 (fix: Added checkout modal (#15))
 
 export const MainPage: React.FC = () => {
 <<<<<<< HEAD
@@ -46,6 +52,9 @@ export const MainPage: React.FC = () => {
       </div>
       {state.cartItems.length > 0 && (
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> 6346829 (fix: Added checkout modal (#15))
         <div className={styles.checkoutButtonSm}>
           <CheckoutButton
             totalPrice={state.totalPrice}
@@ -82,6 +91,7 @@ const products: Product[] = [
     title: 'SHAWARMA I RULL',
     content: 'Agurk, chicken',
     price: 120,
+<<<<<<< HEAD
     allergier: 'Allergier: gluten',
     img: './assets/shawarmarull.jpg',
   },
@@ -328,6 +338,8 @@ const products: Product[] = [
     title: 'SHAWARMA I RULL',
     content: 'Agurk, chicken',
     price: 100,
+=======
+>>>>>>> 6346829 (fix: Added checkout modal (#15))
     allergier: 'Allergier: gluten',
     img: './assets/shawarmarull.jpg',
   },
@@ -336,7 +348,7 @@ const products: Product[] = [
     cat: 's',
     title: 'SHAWARMA TALLARKEN',
     content: 'Agurk, chicken',
-    price: 100,
+    price: 140,
     allergier: 'Allergier: gluten',
     img: './assets/shawrma-arabi.jpeg',
   },
@@ -345,7 +357,7 @@ const products: Product[] = [
     cat: 's',
     title: 'HUNGRY BIRDS ',
     content: 'Agurk, chicken',
-    price: 100,
+    price: 165,
     allergier: 'Allergier: gluten',
     img: './assets/hungry-birds.png',
   },

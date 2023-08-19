@@ -16,9 +16,13 @@ import { CartItemComponent } from '../components/CartItem';
 import styles from './cart.module.css';
 import { useItem } from '../state/ItemContext';
 <<<<<<< HEAD
+<<<<<<< HEAD
 import { CheckoutButton } from '../components/CheckoutButton';
 =======
 >>>>>>> 2a13422 (fix: Added Actions generator and style fix)
+=======
+import { CheckoutButton } from '../components/CheckoutButton';
+>>>>>>> 6346829 (fix: Added checkout modal (#15))
 interface CartItemProps {
   cartItems: CartItem[];
 }
@@ -111,8 +115,12 @@ export const Cart: React.FC<CartItemProps> = ({ cartItems }: CartItemProps) => {
         <div ref={scrollingRef}></div>
       </div>
       {state.cartItems.length > 0 && (
-        <div className={styles.toPaymentBtn}>
-          <div>Til betaling</div>
+        <div className={styles.toPaymentBtnLg}>
+          <CheckoutButton
+            totalPrice={state.totalPrice}
+            cartItemsNumber={state.cartItems.length}
+            onClick={() => {}}
+          />
         </div>
       )}
 >>>>>>> 1ec328b (feat: Scrollable cart items (#12))
