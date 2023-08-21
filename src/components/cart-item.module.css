@@ -37,3 +37,7 @@
     align-items: center;
   }
 }
+
+.deleteBtnWrapper {
+  margin: 0 0 0 20px;
+}

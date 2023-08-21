@@ -39,11 +39,7 @@ export const Cart: React.FC<CartItemProps> = ({ cartItems }: CartItemProps) => {
           (cartItem: CartItem, index: number) =>
             cartItem &&
             cartItem.quantity > 0 && (
-              <CartItemComponent
-                key={index}
-                title={cartItem.product.title}
-                product={cartItem.product}
-              />
+              <CartItemComponent key={index} product={cartItem.product} />
             ),
         )}
         <div ref={scrollingRef}></div>

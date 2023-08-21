@@ -1,0 +1,75 @@
+.checkoutModalContainer {
+}
+
+.modalContentWrapper {
+  display: flex;
+  flex-direction: column;
+}
+
+.header {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+
+.closeBtn {
+  border-radius: 0.5em;
+  width: 2.5rem;
+  height: 2.5rem;
+  padding: 0;
+  cursor: pointer;
+  border: none;
+}
+
+.itemsWrapper {
+  margin: 16px;
+}
+
+.orderSettings {
+  margin: 16px;
+}
+
+.checkoutModalContainer {
+  display: flex;
+  flex-direction: column;
+}
+
+.orderSettingsBtnsWrapper {
+  display: flex;
+  flex-direction: row;
+  width: 100%;
+}
+
+.fastestBtn {
+  border: 1px solid rgb(196 196 196);
+  overflow: hidden;
+  background: white;
+  border-radius: 5px;
+  width: 50%;
+  margin-right: 16px;
+  color: rgb(102 102 102);
+}
+
+.fastestBtnSelected {
+  border: 1px solid;
+  overflow: hidden;
+  border-radius: 5px;
+  width: 50%;
+  margin-right: 16px;
+  background: rgb(255 168 108);
+  font-weight: 500;
+}
+
+.timePickerBtn {
+  width: 50%;
+}
+
+.timePickerBtnSelected {
+  background: rgb(255 168 108);
+}
+
+.commentSection {
+  display: flex;
+  flex-direction: column;
+  margin: 16px;
+}
