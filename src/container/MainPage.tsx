@@ -14,11 +14,13 @@ export const MainPage: React.FC = () => {
 
   // eslint-disable-next-line
   useEffect(() => dispatch({ type: 'updateTotalPrice' }), [state.cartItems]);
+
   useEffect(() => {
-    if (state.cartItems.length === 0) {
+    if (state.cartItems.length === 0 && isOpenCheckoutModal) {
       setIsOpenCheckoutModal(false);
     }
-  });
+    //eslint-disable-next-line
+  }, [state.cartItems]);
   return (
     <div className={styles.mainPageContainer}>
       <div className={styles.menyWrapper}>

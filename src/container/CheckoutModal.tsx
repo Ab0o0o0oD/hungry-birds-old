@@ -45,73 +45,86 @@ export const CheckoutModal: React.FC<CheckoutModalProps> = ({
             <AiOutlineClose size={25} />
           </button>
         </section>
-        <section className={styles.itemsWrapper}>
-          <h3>Varer:</h3>
 
-          {state.cartItems.map((item, index) => (
-            <CartItemComponent product={item.product} key={index} />
-          ))}
-        </section>
-        <section className={styles.orderSettings}>
-          <div className={styles.orderSettingsItemWrapper}>
-            <TitleWithIcon
-              title={'Når ønsker du å hente bestillingen din?'}
-              icon={<RxLapTimer size={25} />}
-            />
-            <div className={styles.orderSettingsBtnsWrapper}>
-              <button
-                className={`${
-                  selectedFastest
-                    ? styles.fastestBtnSelected
-                    : styles.fastestBtn
-                }`}
-                onClick={() => {
-                  setClock(null);
-                  setselectedFastest(true);
-                }}
-              >
-                Fortest mulig
-              </button>
-              <TimePicker
-                label={`${clock ? '' : 'Hente tid'}`}
-                disablePast={true}
-                closeOnSelect={true}
-                className={`${
-                  clock === null
-                    ? styles.timePickerBtn
-                    : styles.timePickerBtnSelected
-                }`}
-                value={clock}
-                onChange={(e) => {
-                  setselectedFastest(false);
-                  setClock(e);
-                }}
-                ampmInClock={false}
-                ampm={false}
-                minutesStep={5}
-                viewRenderers={{
-                  hours: renderTimeViewClock,
-                  minutes: renderTimeViewClock,
-                  seconds: renderTimeViewClock,
-                }}
+        <div className={styles.content}>
+          <h3>Varer:</h3>
+          <section className={styles.itemsWrapper}>
+            {state.cartItems.map((item, index) => (
+              <CartItemComponent product={item.product} key={index} />
+            ))}
+          </section>
+          <section className={styles.orderSettings}>
+            <div className={styles.orderSettingsItemWrapper}>
+              <TitleWithIcon
+                title={'Når ønsker du å hente bestillingen din?'}
+                icon={<RxLapTimer size={25} />}
               />
+              <div className={styles.orderSettingsBtnsWrapper}>
+                <button
+                  className={`${
+                    selectedFastest
+                      ? styles.fastestBtnSelected
+                      : styles.fastestBtn
+                  }`}
+                  onClick={() => {
+                    setClock(null);
+                    setselectedFastest(true);
+                  }}
+                >
+                  Fortest mulig
+                </button>
+                <TimePicker
+                  label={`${clock ? '' : 'Hente tid'}`}
+                  disablePast={true}
+                  closeOnSelect={true}
+                  className={`${
+                    clock === null
+                      ? styles.timePickerBtn
+                      : styles.timePickerBtnSelected
+                  }`}
+                  value={clock}
+                  onChange={(e) => {
+                    setselectedFastest(false);
+                    setClock(e);
+                  }}
+                  ampmInClock={false}
+                  ampm={false}
+                  minutesStep={5}
+                  viewRenderers={{
+                    hours: renderTimeViewClock,
+                    minutes: renderTimeViewClock,
+                    seconds: renderTimeViewClock,
+                  }}
+                />
+              </div>
             </div>
-          </div>
-        </section>
-        <section className={styles.commentSection}>
-          <TitleWithIcon
-            title={'Kommentar'}
-            icon={<TfiCommentsSmiley size={25} />}
-          />
-          <TextField
-            id="Kommentar-multiline-textfield"
-            name="Kommentar til bestillingen din"
-            label="Legg igjen en kommentar til bestillingen din"
-            multiline
-            maxRows={4}
-            hiddenLabel={true}
-          />
-        </section>
+          </section>
+          <section className={styles.commentSection}>
+            <TitleWithIcon
+              title={'Kommentar'}
+              icon={<TfiCommentsSmiley size={25} />}
+            />
+            <TextField
+              id="Kommentar-multiline-textfield"
+              name="Kommentar til bestillingen din"
+              label="Legg igjen en kommentar til bestillingen din"
+              multiline
+              maxRows={4}
+              hiddenLabel={true}
+            />
+          </section>
+
+          <section className={styles.paymentMethodSection}>
+            <button className={styles.payWithVippsBtn}>
+              Betal med
+              <img
+                className={styles.logoWrapper}
+                src="./assets/Vipps-logo-wrapper.svg"
+                alt="betal med vipps button"
+              />
+            </button>
+          </section>
+        </div>
       </div>
     </ReactModal>
   );
