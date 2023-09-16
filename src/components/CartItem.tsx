@@ -8,6 +8,7 @@ import { PrimaryButton } from './PrimaryButton';
 import { useItem } from '../state/ItemContext';
 
 interface CartItemProps {
+<<<<<<< HEAD
   title: string;
 =======
 import { CartItem, Product } from '../types';
@@ -25,25 +26,30 @@ import { useItem } from '../state/ItemContext';
 interface CartItemProps {
   title: string;
 >>>>>>> 9a9ad78 (feat: Added cart item context provider)
+=======
+>>>>>>> bda5181 (fix: Added checkout modal content (#16))
   product: Product;
 }
 
 export const CartItemComponent: React.FC<CartItemProps> = ({
+<<<<<<< HEAD
   title,
 <<<<<<< HEAD
 <<<<<<< HEAD
+=======
+>>>>>>> bda5181 (fix: Added checkout modal content (#16))
   product,
 }: CartItemProps) => {
   const { dispatch } = useItem();
   return (
     <div className={styles.cartItemWrapper}>
       <div className={styles.description}>
-        <h1 className={styles.title}>{title}</h1>
+        <h1 className={styles.title}>{product.title}</h1>
         <h2 className={styles.addon}>Addons</h2>
       </div>
       <div className={styles.buttons}>
         <PlusMinusButton product={product} />
-        <div style={{ margin: '0 0 0 20px' }}>
+        <div className={styles.deleteBtnWrapper}>
           <PrimaryButton
             text={'Slett'}
             color={'secondary'}

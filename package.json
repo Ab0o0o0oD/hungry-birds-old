@@ -5,13 +5,21 @@
   "dependencies": {
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
 >>>>>>> 6346829 (fix: Added checkout modal (#15))
+=======
+    "@emotion/react": "^11.11.1",
+    "@emotion/styled": "^11.11.0",
+    "@mui/material": "^5.14.5",
+    "@mui/x-date-pickers": "^6.11.2",
+>>>>>>> bda5181 (fix: Added checkout modal content (#16))
     "@types/node": "16.18.30",
     "@types/react": "18.2.6",
     "@types/react-dom": "18.2.4",
     "@types/react-modal": "^3.16.0",
     "bootstrap": "5.2.3",
+    "dayjs": "^1.11.9",
     "gh-pages": "5.0.0",
     "react": "18.2.0",
     "react-dom": "18.2.0",

@@ -12,6 +12,7 @@ import { Product } from '../types';
 import { useItem } from '../state/ItemContext';
 import { Cart } from './Cart';
 import { CheckoutButton } from '../components/CheckoutButton';
+<<<<<<< HEAD
 import ReactModal from 'react-modal';
 <<<<<<< HEAD
 =======
@@ -21,15 +22,29 @@ import "./main-page.css";
 >>>>>>> 5eab785 (fix: Added responsive meny style (#1))
 =======
 >>>>>>> 6346829 (fix: Added checkout modal (#15))
+=======
+import { CheckoutModal } from './CheckoutModal';
+>>>>>>> bda5181 (fix: Added checkout modal content (#16))
 
 export const MainPage: React.FC = () => {
 <<<<<<< HEAD
   const { state, dispatch } = useItem();
   const [isOpenCheckoutModal, setIsOpenCheckoutModal] =
     useState<boolean>(false);
-  useEffect(() => dispatch({ type: 'updateTotalPrice' }));
 
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+  // eslint-disable-next-line
+  useEffect(() => dispatch({ type: 'updateTotalPrice' }), [state.cartItems]);
+
+  useEffect(() => {
+    if (state.cartItems.length === 0 && isOpenCheckoutModal) {
+      setIsOpenCheckoutModal(false);
+    }
+    //eslint-disable-next-line
+  }, [state.cartItems]);
+>>>>>>> bda5181 (fix: Added checkout modal content (#16))
   return (
     <div className={styles.mainPageContainer}>
       <div className={styles.menyWrapper}>
@@ -57,29 +72,14 @@ export const MainPage: React.FC = () => {
 >>>>>>> 6346829 (fix: Added checkout modal (#15))
         <div className={styles.checkoutButtonSm}>
           <CheckoutButton
-            totalPrice={state.totalPrice}
-            cartItemsNumber={state.cartItems.length}
             onClick={() => setIsOpenCheckoutModal(!isOpenCheckoutModal)}
           />
         </div>
       )}
-      <ReactModal
-        isOpen={isOpenCheckoutModal}
-        contentLabel="Checkout modal"
-        style={{ content: { color: 'black' } }}
-      >
-        <div>
-          <button onClick={() => setIsOpenCheckoutModal(!isOpenCheckoutModal)}>
-            Close
-          </button>
-          <h2>Bestilling:</h2>
-          <ol>
-            {state.cartItems.map((item, index) => (
-              <li key={index}>{item.product.title}</li>
-            ))}
-          </ol>
-        </div>
-      </ReactModal>
+      <CheckoutModal
+        isOpenCheckoutModal={isOpenCheckoutModal}
+        setIsOpenCheckoutModal={setIsOpenCheckoutModal}
+      />
     </div>
   );
 };

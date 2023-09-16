@@ -1,6 +1,7 @@
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 import React, { useEffect, useRef } from 'react';
 =======
 import React from 'react';
@@ -11,6 +12,9 @@ import React, { LegacyRef, useEffect, useRef } from 'react';
 =======
 import React, { useEffect, useRef } from 'react';
 >>>>>>> f0bdd3f (fix: remove unused import)
+=======
+import React, { useEffect, useRef, useState } from 'react';
+>>>>>>> bda5181 (fix: Added checkout modal content (#16))
 import { CartItem } from '../types';
 import { CartItemComponent } from '../components/CartItem';
 import styles from './cart.module.css';
@@ -18,11 +22,15 @@ import { useItem } from '../state/ItemContext';
 <<<<<<< HEAD
 <<<<<<< HEAD
 import { CheckoutButton } from '../components/CheckoutButton';
+<<<<<<< HEAD
 =======
 >>>>>>> 2a13422 (fix: Added Actions generator and style fix)
 =======
 import { CheckoutButton } from '../components/CheckoutButton';
 >>>>>>> 6346829 (fix: Added checkout modal (#15))
+=======
+import { CheckoutModal } from './CheckoutModal';
+>>>>>>> bda5181 (fix: Added checkout modal content (#16))
 interface CartItemProps {
   cartItems: CartItem[];
 }
@@ -31,8 +39,13 @@ export const Cart: React.FC<CartItemProps> = ({ cartItems }: CartItemProps) => {
   const { state } = useItem();
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
 >>>>>>> 1ec328b (feat: Scrollable cart items (#12))
+=======
+  const [isOpenCheckoutModal, setIsOpenCheckoutModal] =
+    useState<boolean>(false);
+>>>>>>> bda5181 (fix: Added checkout modal content (#16))
 
   const scrollingRef = useRef<HTMLDivElement>(null);
 
@@ -77,11 +90,7 @@ export const Cart: React.FC<CartItemProps> = ({ cartItems }: CartItemProps) => {
           (cartItem: CartItem, index: number) =>
             cartItem &&
             cartItem.quantity > 0 && (
-              <CartItemComponent
-                key={index}
-                title={cartItem.product.title}
-                product={cartItem.product}
-              />
+              <CartItemComponent key={index} product={cartItem.product} />
             ),
         )}
 <<<<<<< HEAD
@@ -92,9 +101,11 @@ export const Cart: React.FC<CartItemProps> = ({ cartItems }: CartItemProps) => {
       {state.cartItems.length > 0 && (
         <div className={styles.toPaymentBtnLg}>
           <CheckoutButton
-            totalPrice={state.totalPrice}
-            cartItemsNumber={state.cartItems.length}
-            onClick={() => {}}
+            onClick={() => setIsOpenCheckoutModal(!isOpenCheckoutModal)}
+          />
+          <CheckoutModal
+            isOpenCheckoutModal={isOpenCheckoutModal}
+            setIsOpenCheckoutModal={setIsOpenCheckoutModal}
           />
         </div>
       )}

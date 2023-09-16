@@ -90,7 +90,7 @@ body {
 
 .header {
   position: relative;
-  height: 12rem;
+  height: 12em;
   z-index: 3;
 >>>>>>> 3f8d105 (fix: Added prettier)
 }
@@ -117,6 +117,7 @@ body {
   margin: 20px;
   width: 200px;
 }
+<<<<<<< HEAD
 
 h3 {
   font-size: 1.6rem;
@@ -159,3 +160,5 @@ h3 {
     font-size: 1.1rem;
   }
 }
+=======
+>>>>>>> bda5181 (fix: Added checkout modal content (#16))

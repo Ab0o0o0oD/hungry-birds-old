@@ -42,6 +42,8 @@ function App() {
 =======
 import { MainPage } from './container/MainPage';
 import { ItemProvider } from './state/ItemContext';
+import { LocalizationProvider } from '@mui/x-date-pickers';
+import { AdapterDayjs } from '@mui/x-date-pickers/AdapterDayjs';
 
 function App() {
   return (
@@ -56,6 +58,7 @@ function App() {
           <img className="logo" src="./assets/logo.PNG" alt="logo" />
         </div>
       </header>
+<<<<<<< HEAD
       <nav></nav>
 <<<<<<< HEAD
       <MainPage />
@@ -65,6 +68,13 @@ function App() {
         <MainPage />
       </ItemProvider>
 >>>>>>> 9a9ad78 (feat: Added cart item context provider)
+=======
+      <LocalizationProvider dateAdapter={AdapterDayjs}>
+        <ItemProvider>
+          <MainPage />
+        </ItemProvider>
+      </LocalizationProvider>
+>>>>>>> bda5181 (fix: Added checkout modal content (#16))
     </div>
   );
 }

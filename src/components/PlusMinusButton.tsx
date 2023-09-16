@@ -1,8 +1,12 @@
 import React from 'react';
 import { CartItem, Product } from '../types';
+<<<<<<< HEAD
 import './plus-minus-button.css';
 <<<<<<< HEAD
 <<<<<<< HEAD
+=======
+import styles from './plus-minus-button.module.css';
+>>>>>>> bda5181 (fix: Added checkout modal content (#16))
 import { useItem } from '../state/ItemContext';
 
 interface PlusMinusButtonProps {
@@ -29,14 +33,14 @@ export const PlusMinusButton: React.FC<PlusMinusButtonProps> = ({
 
   return (
     state.cartItems && (
-      <div className="plus-minus-button">
+      <div className={styles.plusMinusButton}>
         <button
-          className="minus-button"
+          className={styles.minusButton}
           onClick={() => dispatch({ type: 'decrement', product: product })}
         >
           <span className="minus">-</span>
         </button>
-        <span className="quantity">
+        <span className={styles.quantity}>
           {
             state.cartItems.find(
               (value: CartItem) => value.product.id === product.id,
@@ -44,7 +48,7 @@ export const PlusMinusButton: React.FC<PlusMinusButtonProps> = ({
           }
         </span>
         <button
-          className="plus-button"
+          className={styles.plusButton}
           onClick={() => dispatch({ type: 'increment', product: product })}
         >
           +

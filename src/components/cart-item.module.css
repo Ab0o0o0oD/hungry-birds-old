@@ -38,6 +38,7 @@
     width: 100%;
     align-items: center;
   }
+<<<<<<< HEAD
 =======
   font-size: 1.5rem;
 >>>>>>> 8bb6725 (feat: Implemented Cart)
@@ -70,4 +71,21 @@
     width: 100%;
     align-items: center;
   }
+=======
+
+  .cartItemWrapper {
+    display: flex;
+    justify-content: space-between;
+    flex-direction: column;
+    align-items: flex-start;
+    margin: 1rem 0;
+    padding: 1rem;
+    border: 1px solid #ccc;
+    border-radius: 12px;
+  }
+}
+
+.deleteBtnWrapper {
+  margin: 0 0 0 20px;
+>>>>>>> bda5181 (fix: Added checkout modal content (#16))
 }

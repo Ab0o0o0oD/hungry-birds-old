@@ -1,14 +1,20 @@
-.minus-button,
-.plus-button {
+.minusButton,
+.plusButton {
   display: flex;
   align-items: center;
+  justify-content: center;
   font-size: 30px;
   font-weight: 600;
   cursor: pointer;
+<<<<<<< HEAD:src/components/plus-minus-button.css
   border-radius: 2%;
 <<<<<<< HEAD
 <<<<<<< HEAD
   width: 30px;
+=======
+  border-radius: 10%;
+  width: 35px;
+>>>>>>> bda5181 (fix: Added checkout modal content (#16)):src/components/plus-minus-button.module.css
   height: 35px;
 =======
   height: 40px;
@@ -29,14 +35,10 @@
 >>>>>>> b7360c7 (feat: Use css modules)
   color: white;
   background-color: var(--main-color);
-  border: #3d981f;
+  border: none;
 }
 
-.minus-button {
-  padding-left: 9px;
-}
-
-.plus-minus-button {
+.plusMinusButton {
   display: flex;
   align-items: center;
 <<<<<<< HEAD
@@ -50,6 +52,5 @@
 
 .quantity {
   margin: 0 1rem;
-  font-size: 1.2rem;
   font-weight: bold;
 }
