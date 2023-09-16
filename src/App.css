@@ -29,7 +29,7 @@ body {
 
 .header {
   position: relative;
-  height: 12rem;
+  height: 12em;
   z-index: 3;
 }
 
@@ -49,14 +49,4 @@ body {
 .logo {
   margin: 20px;
   width: 200px;
-}
-
-h3 {
-  font-size: 1.6rem;
-}
-
-@media only screen and (max-width: 768px) {
-  h3 {
-    font-size: 1.1rem;
-  }
 }

@@ -44,8 +44,6 @@ export const MainPage: React.FC = () => {
       {state.cartItems.length > 0 && (
         <div className={styles.checkoutButtonSm}>
           <CheckoutButton
-            totalPrice={state.totalPrice}
-            cartItemsNumber={state.cartItems.length}
             onClick={() => setIsOpenCheckoutModal(!isOpenCheckoutModal)}
           />
         </div>

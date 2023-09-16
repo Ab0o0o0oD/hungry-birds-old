@@ -33,7 +33,7 @@ export const MenyCard: React.FC<MenyCardProps> = ({
       </div>
       <div className={styles.cardInfoWrapper}>
         <div className={styles.cardInfo}>
-          <h5>{product.title}</h5>
+          <h3>{product.title}</h3>
           <p>Innhold: {product.content}</p>
           <p>{product.allergier}</p>
           <p>{product.price} Kr</p>

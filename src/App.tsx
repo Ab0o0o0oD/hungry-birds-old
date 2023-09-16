@@ -18,7 +18,6 @@ function App() {
           <img className="logo" src="./assets/logo.PNG" alt="logo" />
         </div>
       </header>
-      <nav></nav>
       <LocalizationProvider dateAdapter={AdapterDayjs}>
         <ItemProvider>
           <MainPage />

@@ -21,10 +21,10 @@ export const CheckoutModal: React.FC<CheckoutModalProps> = ({
 }: CheckoutModalProps) => {
   const { state } = useItem();
   const customStyle = {
-    content: { color: 'black' },
+    content: { color: 'black', padding: '0' },
   };
   const [clock, setClock] = useState<Date | null>(null);
-  console.log(clock?.toLocaleString());
+
   const [selectedFastest, setselectedFastest] = useState<boolean>(true);
   return (
     <ReactModal
@@ -37,7 +37,7 @@ export const CheckoutModal: React.FC<CheckoutModalProps> = ({
     >
       <div className={styles.modalContentWrapper}>
         <section className={styles.header}>
-          <h2>Til Betaling</h2>
+          <h1>Til Betaling</h1>
           <button
             className={styles.closeBtn}
             onClick={() => setIsOpenCheckoutModal(!isOpenCheckoutModal)}

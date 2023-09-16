@@ -4,6 +4,7 @@
 .modalContentWrapper {
   display: flex;
   flex-direction: column;
+  padding: 0.5rem;
 }
 
 .header {
@@ -14,15 +15,25 @@
 
 .closeBtn {
   border-radius: 0.5em;
-  width: 2.5rem;
-  height: 2.5rem;
+  width: 40px;
+  height: 40px;
   padding: 0;
   cursor: pointer;
   border: none;
 }
 
 .content {
-  margin: 16px;
+  margin: 8px;
+}
+
+@media only screen and (min-width: 768px) {
+  .modalContentWrapper {
+    padding: 1rem;
+  }
+
+  .content {
+    margin: 16px;
+  }
 }
 
 .content > * {
