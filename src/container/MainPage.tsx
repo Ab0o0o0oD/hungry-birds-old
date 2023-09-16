@@ -5,14 +5,22 @@ import { Product } from '../types';
 import { useItem } from '../state/ItemContext';
 import { Cart } from './Cart';
 import { CheckoutButton } from '../components/CheckoutButton';
-import ReactModal from 'react-modal';
+import { CheckoutModal } from './CheckoutModal';
 
 export const MainPage: React.FC = () => {
   const { state, dispatch } = useItem();
   const [isOpenCheckoutModal, setIsOpenCheckoutModal] =
     useState<boolean>(false);
-  useEffect(() => dispatch({ type: 'updateTotalPrice' }));
 
+  // eslint-disable-next-line
+  useEffect(() => dispatch({ type: 'updateTotalPrice' }), [state.cartItems]);
+
+  useEffect(() => {
+    if (state.cartItems.length === 0 && isOpenCheckoutModal) {
+      setIsOpenCheckoutModal(false);
+    }
+    //eslint-disable-next-line
+  }, [state.cartItems]);
   return (
     <div className={styles.mainPageContainer}>
       <div className={styles.menyWrapper}>
@@ -36,29 +44,14 @@ export const MainPage: React.FC = () => {
       {state.cartItems.length > 0 && (
         <div className={styles.checkoutButtonSm}>
           <CheckoutButton
-            totalPrice={state.totalPrice}
-            cartItemsNumber={state.cartItems.length}
             onClick={() => setIsOpenCheckoutModal(!isOpenCheckoutModal)}
           />
         </div>
       )}
-      <ReactModal
-        isOpen={isOpenCheckoutModal}
-        contentLabel="Checkout modal"
-        style={{ content: { color: 'black' } }}
-      >
-        <div>
-          <button onClick={() => setIsOpenCheckoutModal(!isOpenCheckoutModal)}>
-            Close
-          </button>
-          <h2>Bestilling:</h2>
-          <ol>
-            {state.cartItems.map((item, index) => (
-              <li key={index}>{item.product.title}</li>
-            ))}
-          </ol>
-        </div>
-      </ReactModal>
+      <CheckoutModal
+        isOpenCheckoutModal={isOpenCheckoutModal}
+        setIsOpenCheckoutModal={setIsOpenCheckoutModal}
+      />
     </div>
   );
 };

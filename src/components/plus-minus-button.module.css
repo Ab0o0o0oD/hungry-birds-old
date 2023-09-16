@@ -1,29 +1,25 @@
-.minus-button,
-.plus-button {
+.minusButton,
+.plusButton {
   display: flex;
   align-items: center;
+  justify-content: center;
   font-size: 30px;
   font-weight: 600;
   cursor: pointer;
-  border-radius: 2%;
-  width: 30px;
+  border-radius: 10%;
+  width: 35px;
   height: 35px;
   color: white;
   background-color: var(--main-color);
-  border: #3d981f;
+  border: none;
 }
 
-.minus-button {
-  padding-left: 9px;
-}
-
-.plus-minus-button {
+.plusMinusButton {
   display: flex;
   align-items: center;
 }
 
 .quantity {
   margin: 0 1rem;
-  font-size: 1.2rem;
   font-weight: bold;
 }

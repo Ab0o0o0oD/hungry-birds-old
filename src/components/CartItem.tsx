@@ -6,24 +6,22 @@ import { PrimaryButton } from './PrimaryButton';
 import { useItem } from '../state/ItemContext';
 
 interface CartItemProps {
-  title: string;
   product: Product;
 }
 
 export const CartItemComponent: React.FC<CartItemProps> = ({
-  title,
   product,
 }: CartItemProps) => {
   const { dispatch } = useItem();
   return (
     <div className={styles.cartItemWrapper}>
       <div className={styles.description}>
-        <h1 className={styles.title}>{title}</h1>
+        <h1 className={styles.title}>{product.title}</h1>
         <h2 className={styles.addon}>Addons</h2>
       </div>
       <div className={styles.buttons}>
         <PlusMinusButton product={product} />
-        <div style={{ margin: '0 0 0 20px' }}>
+        <div className={styles.deleteBtnWrapper}>
           <PrimaryButton
             text={'Slett'}
             color={'secondary'}

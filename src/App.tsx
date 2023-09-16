@@ -2,6 +2,8 @@ import React from 'react';
 import './App.css';
 import { MainPage } from './container/MainPage';
 import { ItemProvider } from './state/ItemContext';
+import { LocalizationProvider } from '@mui/x-date-pickers';
+import { AdapterDayjs } from '@mui/x-date-pickers/AdapterDayjs';
 
 function App() {
   return (
@@ -16,10 +18,11 @@ function App() {
           <img className="logo" src="./assets/logo.PNG" alt="logo" />
         </div>
       </header>
-      <nav></nav>
-      <ItemProvider>
-        <MainPage />
-      </ItemProvider>
+      <LocalizationProvider dateAdapter={AdapterDayjs}>
+        <ItemProvider>
+          <MainPage />
+        </ItemProvider>
+      </LocalizationProvider>
     </div>
   );
 }

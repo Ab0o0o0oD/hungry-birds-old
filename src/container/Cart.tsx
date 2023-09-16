@@ -1,15 +1,18 @@
-import React, { useEffect, useRef } from 'react';
+import React, { useEffect, useRef, useState } from 'react';
 import { CartItem } from '../types';
 import { CartItemComponent } from '../components/CartItem';
 import styles from './cart.module.css';
 import { useItem } from '../state/ItemContext';
 import { CheckoutButton } from '../components/CheckoutButton';
+import { CheckoutModal } from './CheckoutModal';
 interface CartItemProps {
   cartItems: CartItem[];
 }
 
 export const Cart: React.FC<CartItemProps> = ({ cartItems }: CartItemProps) => {
   const { state } = useItem();
+  const [isOpenCheckoutModal, setIsOpenCheckoutModal] =
+    useState<boolean>(false);
 
   const scrollingRef = useRef<HTMLDivElement>(null);
 
@@ -39,11 +42,7 @@ export const Cart: React.FC<CartItemProps> = ({ cartItems }: CartItemProps) => {
           (cartItem: CartItem, index: number) =>
             cartItem &&
             cartItem.quantity > 0 && (
-              <CartItemComponent
-                key={index}
-                title={cartItem.product.title}
-                product={cartItem.product}
-              />
+              <CartItemComponent key={index} product={cartItem.product} />
             ),
         )}
         <div ref={scrollingRef}></div>
@@ -51,9 +50,11 @@ export const Cart: React.FC<CartItemProps> = ({ cartItems }: CartItemProps) => {
       {state.cartItems.length > 0 && (
         <div className={styles.toPaymentBtnLg}>
           <CheckoutButton
-            totalPrice={state.totalPrice}
-            cartItemsNumber={state.cartItems.length}
-            onClick={() => {}}
+            onClick={() => setIsOpenCheckoutModal(!isOpenCheckoutModal)}
+          />
+          <CheckoutModal
+            isOpenCheckoutModal={isOpenCheckoutModal}
+            setIsOpenCheckoutModal={setIsOpenCheckoutModal}
           />
         </div>
       )}
